@@ -2,7 +2,7 @@ import type { NextApiRequest, NextApiResponse } from 'next'
 import React from 'react'
 
 
-import { firefox } from '@playwright/test';
+import { firefox } from 'playwright';
 
 type Data = {
   name: string | string[]
