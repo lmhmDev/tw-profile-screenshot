@@ -30,7 +30,7 @@ const Home: NextPage = () => {
       <input type="text" value={text} onChange={handelChange} ></input>
       <button onClick={handleSubmit}>Fetch</button>
       <br />
-      <Image layout="fill" src={followers ? `/${followers}` : ''} />
+      <Image width={200} src={followers ? `/${followers}` : ''} />
     </>
   )
 }
