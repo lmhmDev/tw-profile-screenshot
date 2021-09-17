@@ -13,6 +13,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
   const page = await browser.newPage();
   await page.goto(`https://twitter.com/${req.query.name}`);
   await page.waitForLoadState('networkidle');
-  page.screenshot({ path: `public/${req.query.name}.png` })
+  await page.screenshot({ path: `public/${req.query.name}.png` })
   res.status(200).json({ name: `${req.query.name}.png` })
 }
