@@ -1,15 +1,14 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import React from 'react'
 
-
-import { firefox } from 'playwright';
+import { launchChromium } from 'playwright-aws-lambda'
 
 type Data = {
   name: string | string[]
 }
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse<Data>) {
-  const browser = await firefox.launch();
+  const browser = await launchChromium({ headless: true })
   const page = await browser.newPage();
   await page.goto(`https://twitter.com/${req.query.name}`);
   await page.waitForLoadState('networkidle');
