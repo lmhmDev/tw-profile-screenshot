@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { useState } from 'react'
 import styles from '../styles/Home.module.css'
 import axios from 'axios'
+import lmhm from '../public/lmhm__.png'
 
 interface ApiObject {
   data: {
@@ -30,7 +31,8 @@ const Home: NextPage = () => {
       <input type="text" value={text} onChange={handelChange} ></input>
       <button onClick={handleSubmit}>Fetch</button>
       <br />
-      <Image width={200} src={followers ? `/${followers}` : ''} />
+      <Image src={followers ? `/${followers}` : '/no-image.png'} alt="image" width={1000} height={500} />
+      {/* src={followers ? `/${followers}` : ''} */}
     </>
   )
 }
