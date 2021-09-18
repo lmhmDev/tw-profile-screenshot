@@ -31,6 +31,7 @@ const Home: NextPage = () => {
       <input type="text" value={text} onChange={handelChange} ></input>
       <button onClick={handleSubmit}>Fetch</button>
       <br />
+      <br />
       <Image src={followers ? `/${followers}` : noImage} alt="image" width={1000} height={500} />
     </>
   )
